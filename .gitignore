@@ -1,0 +1,6 @@
+/.agents
+/.aws
+/.codex
+/references
+/config.json
+*.pyc
