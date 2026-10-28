@@ -12,7 +12,7 @@ Create the local config file from the example, then start the proxy with your up
 
 ```sh
 cp config.example.json config.json
-./responses_proxy.py --upstream https://api.openai.com
+./responses_rewrite_proxy.py --upstream https://api.openai.com
 ```
 
 ## Built-in plugins
@@ -26,7 +26,7 @@ cp config.example.json config.json
 After editing the config, reload the running proxy by passing the startup PID:
 
 ```sh
-./responses_proxy.py reload 12345
+./responses_rewrite_proxy.py reload 12345
 ```
 
 Replace `12345` with the printed PID. The command returns as soon as it sends the reload signal.
