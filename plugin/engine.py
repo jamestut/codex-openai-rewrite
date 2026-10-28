@@ -58,8 +58,9 @@ class ReplacementEngine:
         matched = False
         for plugin in chain:
             # matches() must not mutate the body; apply() owns edits and notices.
-            if plugin.matches(body):
-                plugin.apply(body)
+            is_match, private_data = plugin.matches(body)
+            if is_match:
+                plugin.apply(body, private_data)
                 matched = True
 
         if not matched:
