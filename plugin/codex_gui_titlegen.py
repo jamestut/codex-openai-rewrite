@@ -2,6 +2,7 @@
 
 import re
 import sys
+from typing import Optional, Tuple
 
 
 TITLE_SENTENCE = (
@@ -15,7 +16,7 @@ LINE_BREAK = re.compile(r"[\n\r\v\f\x1c-\x1e\x85\u2028\u2029]")
 class Plugin:
     """This plugin has no shared mutable state between requests."""
 
-    def matches(self, body: dict) -> tuple[bool, dict | None]:
+    def matches(self, body: dict) -> Tuple[bool, Optional[dict]]:
         # Criterion 1: input must contain at least two items.
         items = body.get("input")
         if not isinstance(items, list) or len(items) < 2:
